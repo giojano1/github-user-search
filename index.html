@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Github User Search</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <div class="logo">
+          <span>devfinder</span>
+        </div>
+        <div class="light-mode">
+          <span>DARK</span>
+          <img src="img/moon.svg" alt="moon" />
+        </div>
+      </div>
+      <div class="searchbar">
+        <label>
+          <img src="img/search.svg" alt="search" />
+          <input type="text" placeholder="Search Github username..." />
+          <button id="search">Search</button>
+        </label>
+      </div>
+      <div class="result">
+        <div class="left">
+          <img src="img/user.png" alt="user" />
+        </div>
+        <div class="right">
+          <div class="result-header">
+            <span id="name">The Octocat</span>
+            <span id="joined"> Joined 25 Jan 2011 </span>
+          </div>
+          <div class="git-id">
+            <span id="githubId">@octocat</span>
+          </div>
+          <div class="bio">
+            <p id="bio">This Profile has no bio</p>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span>Repos</span>
+              <p id="repos">8</p>
+            </div>
+            <div class="stat">
+              <span>Followers</span>
+              <p id="followers">3938</p>
+            </div>
+            <div class="stat">
+              <span>Following</span>
+              <p id="following">9</p>
+            </div>
+          </div>
+          <div class="links">
+            <div class="link">
+              <img src="img/loc.png" alt="loc" />
+              <span id="location">San Francisco</span>
+            </div>
+            <div class="link">
+              <img src="img/twitter.png" alt="twitter" />
+              <span id="twitter">Not Avaliable</span>
+            </div>
+            <div class="link">
+              <img src="img/url.svg" alt="url" />
+              <span id="url">https://github.blog</span>
+            </div>
+            <div class="link">
+              <img src="img/office.svg" alt="office" />
+              <span id="work">@github</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

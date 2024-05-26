@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --light-1: #0079ff;
+  --light-2: #697c9a;
+  --light-3: #4b6a9b;
+  --light-4: #2b3442;
+  --light-5: #f6f8ff;
+  --light-6: #fefefe;
+  --dark-1: #0079ff;
+  --dark-2: #ffffff;
+  --dark-3: #141d2f;
+  --dark-4: #1e2a47;
+}
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-5);
+}
+main {
+  max-width: 750px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.logo span {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222731;
+}
+.light-mode {
+  display: flex;
+  align-items: center;
+}
+.light-mode span {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--light-2);
+}
+.light-mode img {
+  display: flex;
+  width: 20px;
+  margin-left: 10px;
+}
+.searchbar {
+  width: 100%;
+  margin-top: 35px;
+}
+.searchbar label {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.searchbar label img {
+  position: absolute;
+  left: 25px;
+  width: 24px;
+}
+#search {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  color: var(--dark-2);
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  background-color: var(--light-1);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 24px;
+  cursor: pointer;
+}
+.searchbar label input {
+  width: 100%;
+  height: 70px;
+  background-color: var(--dark-2);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 10px 10px 60px;
+  font-size: 18px;
+  color: var(--light-3);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.searchbar label input::placeholder {
+  color: var(--light-3);
+  font-family: "Space Mono", monospace;
+}
+.result {
+  background-color: var(--dark-2);
+  width: 100%;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 40px;
+  margin-top: 35px;
+  border-radius: 15px;
+}
+.left img {
+  width: 115px;
+  height: 115px;
+}
+.right {
+  margin-left: 30px;
+  width: 100%;
+}
+.result-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--light-4);
+}
+#name {
+  font-size: 26px;
+  font-weight: bold;
+}
+#joined {
+  font-size: 15px;
+  color: var(--light-2);
+}
+#githubId {
+  font-size: 16px;
+  color: var(--dark-1);
+}
+#bio {
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--light-3);
+  margin-top: 20px;
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--light-5);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 30px 0px;
+}
+.stat span {
+  font-size: 13px;
+  color: var(--light-3);
+}
+.stat p {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--light-4);
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.link {
+  width: 48%;
+  display: flex;
+  align-items: center;
+}
+.link img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.link span {
+  color: var(--light-3);
+  font-size: 15px;
+}
