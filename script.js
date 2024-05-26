@@ -53,7 +53,7 @@ searchBtn.addEventListener("click", () => {
           console.log(data);
           img.src = data.avatar_url;
           userName.textContent = data.login;
-          githubId.textContent = data.id;
+          githubId.textContent = `@${data.id}`;
           let date = new Date(data.created_at);
           let months = [
             "Jan",
