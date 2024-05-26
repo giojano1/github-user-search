@@ -124,6 +124,13 @@ main {
 #searchInput:focus {
   outline: none;
 }
+#notFound {
+  font-size: 15px;
+  color: #f74646;
+  position: absolute;
+  right: 120px;
+  display: none;
+}
 .searchbar label input::placeholder {
   color: var(--light-3);
   font-family: "Space Mono", monospace;
@@ -146,6 +153,7 @@ main {
 #img {
   width: 115px;
   height: 115px;
+  border-radius: 50%;
 }
 .header-right {
   width: 78%;
@@ -216,6 +224,7 @@ main {
 .link span {
   color: var(--light-3);
   font-size: 15px;
+  word-break: break-all;
 }
 #url {
   cursor: pointer;

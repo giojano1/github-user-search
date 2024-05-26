@@ -13,6 +13,15 @@ const img = document.querySelector("#img");
 const userName = document.querySelector("#name");
 const githubId = document.querySelector("#githubId");
 const joined = document.querySelector("#joined");
+const bio = document.querySelector("#bio");
+const followers = document.querySelector("#followers");
+const repos = document.querySelector("#repos");
+const following = document.querySelector("#following");
+const userLocation = document.querySelector("#location");
+const twitter = document.querySelector("#twitter");
+const gitUrl = document.querySelector("#url");
+const work = document.querySelector("#work");
+const notFound = document.querySelector("#notFound");
 lightBtn.addEventListener("click", () => {
   lightMode.classList.toggle("show");
   darkMode.classList.toggle("hide");
@@ -31,44 +40,65 @@ lightBtn.addEventListener("click", () => {
 });
 
 searchBtn.addEventListener("click", () => {
+  notFound.style.display = "none";
+
   if (searchInput.value.trim() !== "") {
     let username = searchInput.value.trim();
     let url = `https://api.github.com/users/${username}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        img.src = data.avatar_url;
-        userName.textContent = data.login;
-        githubId.textContent = data.id;
-        joined.textContent = data.created_at;
-      });
+    fetch(url).then((res) => {
+      if (res.status === 404) {
+        notFound.style.display = "block";
+      } else {
+        return res.json().then((data) => {
+          console.log(data);
+          img.src = data.avatar_url;
+          userName.textContent = data.login;
+          githubId.textContent = data.id;
+          let date = new Date(data.created_at);
+          let months = [
+            "Jan",
+            "Feb",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          let updateMonth = months[date.getMonth()];
+          joined.textContent = `Joined ${date.getDate()} ${updateMonth} ${date.getFullYear()}`;
+          if (data.bio == null) {
+            bio.textContent = "This Profile has no bio";
+          } else {
+            bio.textContent = data.bio;
+          }
+          repos.textContent = data.public_repos;
+          followers.textContent = data.followers;
+          following.textContent = data.following;
+          if (data.location == null) {
+            userLocation.textContent = "Not Available";
+          } else {
+            userLocation.textContent = data.location;
+          }
+          if (data.twitter_username == null) {
+            twitter.textContent = "Not Available";
+          } else {
+            twitter.textContent = data.twitter_username;
+          }
+          gitUrl.textContent = data.html_url;
+          if (data.company == null) {
+            work.textContent = "Not Available";
+          } else {
+            work.textContent = data.company;
+          }
+        });
+      }
+    });
   } else {
     alert("sheiyvane");
   }
 });
-
-let date = new Date("2024-01-21T15:41:10Z");
-let day = date.getDate();
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = date.getMonth();
-let year = date.getFullYear();
-
-let updateMonth = "";
-let updateYear = date + updateMonth + year;
-console.log(day, month, year);
-console.log(months[0]);
-console.log(updateYear);
