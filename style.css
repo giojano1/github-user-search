@@ -19,6 +19,25 @@ body {
   font-family: "Space Mono", monospace;
   background-color: var(--light-5);
 }
+.dark-bck {
+  background-color: var(--dark-3) !important;
+}
+.dark-bck2 {
+  background-color: var(--dark-4) !important;
+}
+.dark-txt {
+  color: white !important;
+}
+.dark-placeholder::placeholder {
+  color: white !important;
+}
+.show {
+  display: flex !important;
+}
+.hide {
+  display: none !important;
+}
+
 main {
   max-width: 750px;
   width: 100%;
@@ -28,8 +47,7 @@ main {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  border: 1px solid black;
-  padding: 10px;
+  padding: 50px;
 }
 .header {
   display: flex;
@@ -42,20 +60,23 @@ main {
   font-weight: bold;
   color: #222731;
 }
-.light-mode {
+.lm {
   display: flex;
   align-items: center;
 }
-.light-mode span {
+.lm span {
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
   color: var(--light-2);
 }
-.light-mode img {
+.lm img {
   display: flex;
   width: 20px;
   margin-left: 10px;
+}
+.light {
+  display: none;
 }
 .searchbar {
   width: 100%;
@@ -83,6 +104,11 @@ main {
   border-radius: 10px;
   padding: 15px 24px;
   cursor: pointer;
+  transition: 250ms;
+}
+#search:hover {
+  background-color: #60abff;
+  transition: 250ms;
 }
 .searchbar label input {
   width: 100%;
@@ -95,6 +121,9 @@ main {
   color: var(--light-3);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+#searchInput:focus {
+  outline: none;
+}
 .searchbar label input::placeholder {
   color: var(--light-3);
   font-family: "Space Mono", monospace;
@@ -102,26 +131,34 @@ main {
 .result {
   background-color: var(--dark-2);
   width: 100%;
-  display: flex;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 40px;
   margin-top: 35px;
   border-radius: 15px;
 }
-.left img {
-  width: 115px;
-  height: 115px;
-}
-.right {
-  margin-left: 30px;
-  width: 100%;
-}
+
 .result-header {
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: space-between;
   color: var(--light-4);
+}
+#img {
+  width: 115px;
+  height: 115px;
+}
+.header-right {
+  width: 78%;
+  display: flex;
+  justify-content: space-between;
+}
+.result-content {
+  width: 78%;
+  margin-left: auto;
+}
+.git-id {
+  display: flex;
+  flex-direction: column;
 }
 #name {
   font-size: 26px;
@@ -129,17 +166,17 @@ main {
 }
 #joined {
   font-size: 15px;
+  margin-top: 5px;
   color: var(--light-2);
 }
 #githubId {
   font-size: 16px;
-  color: var(--dark-1);
+  color: var(--dark-1) !important;
 }
 #bio {
   font-size: 15px;
   line-height: 25px;
   color: var(--light-3);
-  margin-top: 20px;
 }
 .stats {
   display: flex;
@@ -168,6 +205,7 @@ main {
   width: 48%;
   display: flex;
   align-items: center;
+  margin: 10px 0px;
 }
 .link img {
   height: 20px;
@@ -178,4 +216,59 @@ main {
 .link span {
   color: var(--light-3);
   font-size: 15px;
+}
+#url {
+  cursor: pointer;
+}
+#url:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 750px) {
+  .header-right {
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 40px;
+  }
+  .result-content {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .result-header {
+    align-items: center;
+  }
+  .link {
+    width: 100%;
+  }
+  #name {
+    font-size: 16px;
+  }
+  #githubId {
+    font-size: 13px;
+  }
+  #joined {
+    font-size: 13px;
+  }
+  #bio {
+    font-size: 13px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat span {
+    font-size: 11px;
+  }
+  .stat p {
+    font-size: 16px;
+  }
+  .link span {
+    font-size: 13px;
+  }
+  main {
+    padding: 15px;
+  }
+  .result {
+    padding: 20px;
+  }
 }

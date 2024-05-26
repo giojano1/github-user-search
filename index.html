@@ -19,29 +19,35 @@
           <span>devfinder</span>
         </div>
         <div class="light-mode">
-          <span>DARK</span>
-          <img src="img/moon.svg" alt="moon" />
+          <div class="dark lm">
+            <span>DARK</span>
+            <img src="img/moon.svg" alt="moon" />
+          </div>
+          <div class="light lm">
+            <span>LIGHT</span>
+            <img src="img/sun.svg" alt="sun" />
+          </div>
         </div>
       </div>
       <div class="searchbar">
         <label>
           <img src="img/search.svg" alt="search" />
-          <input type="text" placeholder="Search Github username..." />
+          <input id="searchInput" type="text" placeholder="Search Github username..." />
           <button id="search">Search</button>
         </label>
       </div>
       <div class="result">
-        <div class="left">
-          <img src="img/user.png" alt="user" />
-        </div>
-        <div class="right">
-          <div class="result-header">
-            <span id="name">The Octocat</span>
+        <div class="result-header">
+          <img id="img" src="img/user.png" alt="user" />
+          <div class="header-right">
+            <div class="git-id">
+              <span id="name">The Octocat</span>
+              <span id="githubId">@octocat</span>
+            </div>
             <span id="joined"> Joined 25 Jan 2011 </span>
           </div>
-          <div class="git-id">
-            <span id="githubId">@octocat</span>
-          </div>
+        </div>
+        <div class="result-content">
           <div class="bio">
             <p id="bio">This Profile has no bio</p>
           </div>
@@ -80,5 +86,6 @@
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
